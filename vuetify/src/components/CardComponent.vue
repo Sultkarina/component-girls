@@ -39,6 +39,17 @@
     <div class="city">{{ card.city }}</div>
     <div class="description">{{ card.description }}</div>
 
+    <div class="parameters-mobile">
+      <div
+        class="parameter-item"
+        v-for="(value, label) in cardParameters"
+        :key="label"
+      >
+        <span v-if="value" class="details-label">{{ label }}</span>
+        <span v-if="value" class="details-value">{{ value }}</span>
+      </div>
+    </div>
+
     <div class="prices">
       <div
         v-for="(price, label) in cardPrices"
@@ -73,7 +84,7 @@ import { useCardStore } from "@/store/cardStore";
 import { Card } from "@/types";
 
 const cardStore = useCardStore();
-const card: Card = cardStore.card;
+const card = cardStore.card;
 
 function callPhone(phoneNumber: string) {
   window.location.href = `tel:${phoneNumber}`;

@@ -1,7 +1,6 @@
 @import "_variables";
 @import "_global";
 
-
 .card-component {
     background-color: $background-color-card;
     color: $color-text;
@@ -52,6 +51,10 @@
                 font-size: $font-size-description;
             }
         }
+    }
+
+    .parameters-mobile {
+        display: none;
     }
 
     .profile-header {
@@ -114,6 +117,7 @@
         border-radius: 500px;
         width: 100%;
         color: $color-text;
+        position: relative;
 
         &:hover {
             background-color: $color-button-active;
@@ -131,7 +135,9 @@
 
         .social {
             display: flex;
-            gap: 8px;
+            gap: 5px;
+            position: absolute;
+            right: 10px;
 
             .social-btn {
                 background-color: transparent;
@@ -142,6 +148,416 @@
 
                 &:hover {
                     background-color: $color-button-active;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 431px) {
+    .card-component {
+        padding: 5px;
+        background-color: $background-color-card;
+        color: $color-text;
+
+        .card-image {
+            width: auto;
+            height: auto;
+            margin-right: 20px;
+            border-radius: $border-radius;
+            float: left;
+
+            .verification-badge {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+
+            .name {
+                font-size: $font-size-currency;
+            }
+
+            .rating {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+
+                .star-icon {
+                    width: 9.6px;
+                    height: 9.6px;
+                }
+            }
+            .rating-score {
+                display: none;
+            }
+        }
+
+        .city {
+            font-size: $font-size-label;
+            margin-top: 5px;
+        }
+
+        .description {
+            font-size: $font-size-label;
+        }
+
+        .info-overlay {
+            display: none;
+        }
+
+        .parameters-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            margin-bottom: 25px;
+            margin-top: 15px;
+
+            .parameter-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .details-label {
+                    font-size: $font-size-label;
+                    opacity: 0.6;
+                }
+
+                .details-value {
+                    font-size: $font-size-label;
+                }
+            }
+        }
+
+        .prices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+
+            .price-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .time-label {
+                    font-size: $font-size-label;
+                }
+
+                .price {
+                    font-size: $font-size-description;
+                }
+            }
+        }
+
+        .contact-btn {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $color-button;
+            border-radius: 25px;
+            font-size: $font-size-currency;
+            font-weight: bold;
+            position: relative;
+
+            .phone-number {
+                color: $color-text;
+                flex-grow: 1;
+            }
+
+            .social {
+                position: absolute;
+                right: 10px;
+                display: flex;
+                gap: 10px;
+
+                .social-btn {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 912px) {
+    .card-component {
+        padding: 5px;
+        background-color: $background-color-card;
+        color: $color-text;
+
+        .card-image {
+            min-width: 136px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: $border-radius;
+            float: left;
+
+            .verification-badge {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+
+            .name {
+                font-size: $font-size-currency;
+            }
+
+            .rating {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+
+                .star-icon {
+                    width: 9.6px;
+                    height: 9.6px;
+                }
+            }
+            .rating-score {
+                display: none;
+            }
+        }
+
+        .city {
+            font-size: $font-size-label;
+        }
+
+        .description {
+            font-size: $font-size-label;
+            margin: 5px 0;
+        }
+
+        .info-overlay {
+            display: none;
+        }
+
+        .parameters-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            margin-bottom: 10px;
+
+            .parameter-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .details-label {
+                    font-size: $font-size-label;
+                    opacity: 0.6;
+                }
+
+                .details-value {
+                    font-size: $font-size-label;
+                }
+            }
+        }
+
+        .prices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+            margin-top: 10px;
+
+            .price-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .time-label {
+                    font-size: $font-size-label;
+                }
+
+                .price {
+                    font-size: $font-size-description;
+                }
+            }
+        }
+
+        .contact-btn {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $color-button;
+            border-radius: 25px;
+            font-size: $font-size-currency;
+            font-weight: bold;
+            position: relative;
+
+            .phone-number {
+                color: $color-text;
+                flex-grow: 1;
+            }
+
+            .social {
+                position: absolute;
+                right: 10px;
+                display: flex;
+                gap: 10px;
+
+                .social-btn {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 376px) {
+    .card-component {
+        padding: 5px;
+        background-color: $background-color-card;
+        color: $color-text;
+
+        .card-image {
+            width: auto;
+            height: auto;
+            margin-right: 20px;
+            border-radius: $border-radius;
+            float: left;
+
+            .verification-badge {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+
+            .name {
+                font-size: $font-size-currency;
+            }
+
+            .rating {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+
+                .star-icon {
+                    width: 9.6px;
+                    height: 9.6px;
+                }
+            }
+            .rating-score {
+                display: none;
+            }
+        }
+
+        .city {
+            font-size: $font-size-label;
+        }
+
+        .description {
+            font-size: $font-size-label;
+        }
+
+        .info-overlay {
+            display: none;
+        }
+
+        .parameters-mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+
+            .parameter-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .details-label {
+                    font-size: $font-size-label;
+                    opacity: 0.6;
+                }
+
+                .details-value {
+                    font-size: $font-size-label;
+                }
+            }
+        }
+
+        .prices {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+
+            .price-block {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .time-label {
+                    font-size: $font-size-label;
+                }
+
+                .price {
+                    font-size: $font-size-description;
+                }
+            }
+        }
+
+        .contact-btn {
+            margin-top: 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $color-button;
+            border-radius: 25px;
+            font-size: $font-size-currency;
+            font-weight: bold;
+            position: relative;
+
+            .phone-number {
+                color: $color-text;
+                flex-grow: 1;
+            }
+
+            .social {
+                position: absolute;
+                right: 10px;
+                display: flex;
+                gap: 10px;
+
+                .social-btn {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }
